@@ -33,27 +33,41 @@ public class moduleFunc {
             return;
         }
         // Add module to stack
+        //Using add because we are using array list and not the Java Stack Class
         stack.add(module);
-        System.out.println("Module added.");
+        System.out.println(module + " has been added to the stack.");
     }
 
     // Pop function
     public void pop() {
+
         if (stack.isEmpty()) {
+            //Check if stack is empty
             System.out.println("Stack is empty");
         } else {
-            stack.remove(stack.size() - 1);
+            //If not empty, remove module from stack
+            try {
+                System.out.println(stack.get(stack.size() - 1) + " has been removed.");
+                //using remove because we are using array list and not the Java Stack Class
+                stack.remove(stack.size() - 1);
+                //Grab the last module in the stack and remove it
+                //Grabbed the last module because it is the last one added / top of the stack
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Stack is empty");
+                return;
+            }
         }
     }
 
     // Peek function
     public void peek() {
-        if (stack.isEmpty()) {
-            System.out.println("Stack is empty");
-        } else {
-            System.out.println(stack.get(stack.size() - 1));
-        }
+    if (stack.isEmpty()) {
+        System.out.println("Stack is empty");
+    } else {
+        // Using stack.peek() to get the last element without removing it
+        System.out.println("The module at the top of the stack is: " + stack.remove());
     }
+}
 
     // Print function
     public void print() {

@@ -26,30 +26,46 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main { //Corrected class naming convention
+    //Create an instance of the moduleFunc class and a scanner object
     moduleFunc func = new moduleFunc();
     Scanner scanner = new Scanner(System.in);
 
+    //Main method
+    //Run the program
+    //Setup like this to allow for easy testing and implementation of other classes in the future
     public static void main(String[] args) {
         Main main = new Main();
         main.run();
     }
 
+    //Learn modules function
     private void moduleLearn() {
         int x = 0;
+        // Loop to add modules to the stack
         while (x != 1) {
-            System.out.println("Enter module name: ");
+            System.out.println("Enter module name (A-Z): ");
             String module = scanner.nextLine();
-            if (!module.isEmpty()) {
+
+            // Check if module name matches
+            //ONly allow capital letters A-Z
+            if (module.matches("[A-Z]+")) {
+                // If matches, add module to stack
                 func.push(module);
-            } else {
+            } else if (module.isEmpty()) {
+                //If module name is empty, exit loop
                 x = 1;
                 System.out.println("No modules added, moving on...");
+            } else {
+                //If module name is invalid, prompt user to enter a valid module name
+                System.out.println("Invalid module name. Please enter capital letters A-Z.");
             }
         }
     }
 
+    //Run function to handle the program / user interaction
     private void run() {
         int choice = 0;
+        //Do while loop to keep the program running until the user decides to exit
         do {
             System.out.println("Module -02 Assignment Stack Implementation");
             System.out.println("Please enter Module names to be added to the stack (A, B, C…)");
@@ -64,6 +80,9 @@ public class Main { //Corrected class naming convention
             System.out.println("2. Peek");
             System.out.println("3. Print");
             System.out.println("4. Exit");
+
+            //Try catch block to handle invalid input
+            //Utilized switch case per live session is allowed
             try {
                 choice = scanner.nextInt();
                 scanner.nextLine();
@@ -83,6 +102,7 @@ public class Main { //Corrected class naming convention
                     default:
                         System.out.println("Invalid choice");
                 }
+                //Catch invalid input inputmismatchexception and prompt user to enter a valid number
             } catch (InputMismatchException e) {
                 System.out.println("Please enter a valid number");
                 scanner.nextLine();
