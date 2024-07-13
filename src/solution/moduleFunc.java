@@ -15,8 +15,9 @@ package solution;
 import java.util.ArrayList;
 
 public class moduleFunc {
+    //Array list to hold the stack because we can't use the Java Stack Class
     ArrayList<String> stack = new ArrayList<String>();
-test
+
 
     public void push(String module) {
         // Push function

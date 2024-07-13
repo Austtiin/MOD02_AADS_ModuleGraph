@@ -44,8 +44,6 @@ public class main {
             func.print();
 
 
-
-
             System.out.println("Modules have been added to the stack");
             System.out.println("Please select an option");
             System.out.println("1. Pop");
@@ -86,3 +84,4 @@ public class main {
         }
 
     }
+}
