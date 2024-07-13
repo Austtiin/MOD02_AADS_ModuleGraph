@@ -39,7 +39,7 @@ public class moduleFunc {
 
     // Pop function
     public void pop() {
-        if (stack.size() == 0) {
+        if (stack.isEmpty()) {
             System.out.println("Stack is empty");
         } else {
             stack.remove(stack.size() - 1);
@@ -48,7 +48,7 @@ public class moduleFunc {
 
     // Peek function
     public void peek() {
-        if (stack.size() == 0) {
+        if (stack.isEmpty()) {
             System.out.println("Stack is empty");
         } else {
             System.out.println(stack.get(stack.size() - 1));
@@ -58,7 +58,7 @@ public class moduleFunc {
     // Print function
     public void print() {
         System.out.println("Modules in the stack are: ");
-        if (stack.size() == 0) {
+        if (stack.isEmpty()) {
             System.out.println("Our Stack is empty");
         } else {
             for (int i = 0; i < stack.size(); i++) {
