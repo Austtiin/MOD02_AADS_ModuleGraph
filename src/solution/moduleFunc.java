@@ -67,7 +67,7 @@ public class moduleFunc {
             // Using the size of the stack to get the last module added
             //Cannot use the Java Stack Class because it is not allowed
             //Used get because we are using array list and not the Java Stack Class
-            System.out.println("The module at the top of the stack is: " + stack.get(stack.size() - 1));
+            System.out.println("The module at the top of the stack is: " + stack.get(stack.size() - 1) + "\n");
         }
     }
 
