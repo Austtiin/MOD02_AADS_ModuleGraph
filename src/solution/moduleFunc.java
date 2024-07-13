@@ -1,10 +1,10 @@
 /*
  * moduleFunc.java
- * Class to handle the stack functions
+ * Class to handle the stack functions for array stack implementation
  *
  * Created by: Austin Stephens
  * Created on: 07/10/2024
- * Rasumssen University
+ * Rasmussen University
  * Professor: Kumar
  *
  */
@@ -61,20 +61,25 @@ public class moduleFunc {
 
     // Peek function
     public void peek() {
-    if (stack.isEmpty()) {
-        System.out.println("Stack is empty");
-    } else {
-        // Using stack.peek() to get the last element without removing it
-        System.out.println("The module at the top of the stack is: " + stack.remove());
+        if (stack.isEmpty()) {
+            System.out.println("Stack is empty");
+        } else {
+            // Using the size of the stack to get the last module added
+            //Cannot use the Java Stack Class because it is not allowed
+            //Used get because we are using array list and not the Java Stack Class
+            System.out.println("The module at the top of the stack is: " + stack.get(stack.size() - 1));
+        }
     }
-}
 
     // Print function
     public void print() {
         System.out.println("Modules in the stack are: ");
+        //Check if stack is empty
         if (stack.isEmpty()) {
             System.out.println("Our Stack is empty");
         } else {
+            //If not empty, print out the modules in the stack by finding its size
+            //Then using a for loop to print out each module
             for (int i = 0; i < stack.size(); i++) {
                 System.out.println(stack.get(i));
             }
